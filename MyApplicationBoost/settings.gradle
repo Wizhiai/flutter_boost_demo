@@ -1,0 +1,12 @@
+include ':app'
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+  settingsDir,
+  '../flutter_boost_dart_demo/.android/include_flutter.groovy'
+))
+
+rootProject.name = "My ApplicationBoost"
+
+
+include ':flutter_boost_dart_demo'
+project(':flutter_boost_dart_demo').projectDir = new File('../flutter_boost_dart_demo')
